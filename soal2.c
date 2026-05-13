@@ -33,7 +33,7 @@ int modul5 (int b, int c){
     if (grid[b][c]=='0'){
         return 0;
     }
-    grid[b][c] = '0';
+    grid[b][c] == '0';
     int size = 1;
     size = size + modul5(b, c+1);
     size = size + modul5(b, c-1);
@@ -43,7 +43,7 @@ int modul5 (int b, int c){
 }
 
 int main(){
-    scanf("%d %d", grid[baris][kolom]);
+    scanf("%d %d", &baris, &kolom);
     for (int i = 0; i < baris; i++){
         scanf("%s", &grid[i]);
     }
