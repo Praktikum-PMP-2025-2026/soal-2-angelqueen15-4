@@ -14,7 +14,7 @@
  */ 
 #include <stdio.h>
 #include <stdlib.h>
-int size = 1;
+
 int baris, kolom;
 char grid[100][100];
 int modul5 (int b, int c){
@@ -33,6 +33,8 @@ int modul5 (int b, int c){
     if (grid[b][c]=='0'){
         return 0;
     }
+    grid[b][c] = '0';
+    int size = 1;
     size = size + modul5(b, c+1);
     size = size + modul5(b, c-1);
     size = size + modul5(b+1, c);
