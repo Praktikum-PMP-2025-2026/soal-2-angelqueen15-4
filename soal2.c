@@ -33,7 +33,7 @@ int modul5 (int b, int c){
     if (grid[b][c]=='0'){
         return 0;
     }
-    grid[b][c] == '0';
+    grid[b][c] = '0';
     int size = 1;
     size = size + modul5(b, c+1);
     size = size + modul5(b, c-1);
@@ -45,14 +45,14 @@ int modul5 (int b, int c){
 int main(){
     scanf("%d %d", &baris, &kolom);
     for (int i = 0; i < baris; i++){
-        scanf("%s", &grid[i]);
+        scanf("%s", grid[i]);
     }
     int palingbesar = 0;
     int pulau = 0;
     int baru = 0;
     for (int i = 0; i < baris; i++){
         for (int j = 0; j < kolom; j++){
-            if (grid[i][j] = '1'){
+            if (grid[i][j] == '1'){
                 pulau = pulau + 1;
                 baru = modul5(i, j);
                 if (baru > palingbesar){
@@ -66,3 +66,4 @@ int main(){
     return 0;
 }
 //referensi https://www.geeksforgeeks.org/c/c-arrays/
+// referensi https://www.geeksforgeeks.org/dsa/find-the-number-of-islands-using-dfs/
