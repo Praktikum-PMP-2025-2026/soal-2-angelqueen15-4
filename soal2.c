@@ -18,7 +18,7 @@ int size = 1;
 int baris, kolom;
 char grid[100][100];
 int modul5 (int b, int c){
-    if (b < baris){
+    if (b < 0){
         return 0;
     }
     if (b >= baris){
@@ -40,16 +40,17 @@ int modul5 (int b, int c){
     return size;
 }
 
-int main{
+int main(){
+    scanf("%d %d", grid[baris][kolom]);
     for (int i = 0; i < baris; i++){
-        scanf("%s", grid[i]);
+        scanf("%s", &grid[i]);
     }
-    palingbesar = 0;
-    pulau = 0;
+    int palingbesar = 0;
+    int pulau = 0;
+    int baru = 0;
     for (int i = 0; i < baris; i++){
         for (int j = 0; j < kolom; j++){
-        scanf("%d %d", grid[baris][kolom]);
-            if (grid[i][j]='1'){
+            if (grid[i][j] = '1'){
                 pulau = pulau + 1;
                 baru = modul5(i, j);
                 if (baru > palingbesar){
@@ -60,4 +61,6 @@ int main{
     }
     printf ("\nISLANDS %d", pulau);
     printf ("\nLARGEST %d", palingbesar);
+    return 0;
 }
+//referensi https://www.geeksforgeeks.org/c/c-arrays/
